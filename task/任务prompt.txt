@@ -1,0 +1,8 @@
+创作者商业化团队要验收本地广告素材提交页。app/creator_studio.html是待测页面，data/review_scenarios.csv列出六个发布案例，rules/review_policy.json保存排期、替代文本和下载回执规则。state/storage_state_matrix.csv说明三份登录状态对应的角色、账号状态和页面身份提示，state目录保存可直接加载的storageState。starter中的配置和测试只覆盖默认页面，请在output中完成可交接的Playwright测试。
+
+每个case都要新建浏览器上下文，并加载场景指定的storageState。通过可访问名称填写案例编号、账号状态、素材类型、商业合作、披露方式、替代文本和排期UTC，再触发页面核验。实际状态、提示文字和提交按钮必须与场景期望一致。六个分支分别是ready_to_submit、needs_disclosure、account_limited、schedule_too_soon、needs_alt_text和reviewer_readonly。复核员不能提交素材，但可以下载包含3行数据的交接回执，其余回执各有1行数据。
+
+测试需要监听Playwright的download事件，按页面给出的文件名把回执保存到output/receipts。逐份核对列顺序、数据行数和首行review_state。使用role、label或test id定位表单、状态区和按钮，确认素材核验表单、核验结果以及三个命名按钮都能从可访问树中找到。每个案例在核验后保存一张output/screenshots下的完整页面截图。
+
+交付output/playwright.config.mjs、output/tests/creator_review.spec.mjs和output/reports/release_review.csv。复核表按case_id记录角色、账号状态、身份提示、页面状态、按钮状态、回执路径、回执行数、截图路径与可访问名称。所有路径从output目录起书写并能定位到实际文件。正式运行只访问127.0.0.1；测试失败时返回非零退出码，本轮reports、receipts和screenshots不能留下不完整结果。
+

@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "result": "PASS",
+  "scanned_sources": 337,
+  "violations": [],
+  "answer_sheets": [
+    "交付物答案清单",
+    "固定字段答案",
+    "固定集合答案",
+    "固定数值答案",
+    "允许变体答案"
+  ],
+  "specification_sheets": [
+    "任务规格转化"
+  ],
+  "task_spec_columns": [
+    "模块",
+    "规格内容"
+  ],
+  "forbidden_spec_labels": [],
+  "declared_delivery_paths": [
+    "output/playwright.config.mjs",
+    "output/receipts/C01_VERIFIED_DISCLOSED_READY_submission_receipt.csv",
+    "output/receipts/C02_PAID_POST_NO_DISCLOSURE_submission_receipt.csv",
+    "output/receipts/C03_LIMITED_ACCOUNT_BLOCKED_submission_receipt.csv",
+    "output/receipts/C04_SCHEDULE_LEAD_TOO_SHORT_submission_receipt.csv",
+    "output/receipts/C05_CAROUSEL_ALT_REQUIRED_submission_receipt.csv",
+    "output/receipts/C06_REVIEWER_READONLY_HANDOFF_submission_receipt.csv",
+    "output/reports/release_review.csv",
+    "output/screenshots/C01_VERIFIED_DISCLOSED_READY.png",
+    "output/screenshots/C02_PAID_POST_NO_DISCLOSURE.png",
+    "output/screenshots/C03_LIMITED_ACCOUNT_BLOCKED.png",
+    "output/screenshots/C04_SCHEDULE_LEAD_TOO_SHORT.png",
+    "output/screenshots/C05_CAROUSEL_ALT_REQUIRED.png",
+    "output/screenshots/C06_REVIEWER_READONLY_HANDOFF.png",
+    "output/tests/creator_review.spec.mjs"
+  ],
+  "reference_paths": [
+    "output/playwright.config.mjs",
+    "output/receipts/C01_VERIFIED_DISCLOSED_READY_submission_receipt.csv",
+    "output/receipts/C02_PAID_POST_NO_DISCLOSURE_submission_receipt.csv",
+    "output/receipts/C03_LIMITED_ACCOUNT_BLOCKED_submission_receipt.csv",
+    "output/receipts/C04_SCHEDULE_LEAD_TOO_SHORT_submission_receipt.csv",
+    "output/receipts/C05_CAROUSEL_ALT_REQUIRED_submission_receipt.csv",
+    "output/receipts/C06_REVIEWER_READONLY_HANDOFF_submission_receipt.csv",
+    "output/reports/release_review.csv",
+    "output/screenshots/C01_VERIFIED_DISCLOSED_READY.png",
+    "output/screenshots/C02_PAID_POST_NO_DISCLOSURE.png",
+    "output/screenshots/C03_LIMITED_ACCOUNT_BLOCKED.png",
+    "output/screenshots/C04_SCHEDULE_LEAD_TOO_SHORT.png",
+    "output/screenshots/C05_CAROUSEL_ALT_REQUIRED.png",
+    "output/screenshots/C06_REVIEWER_READONLY_HANDOFF.png",
+    "output/tests/creator_review.spec.mjs"
+  ]
+}

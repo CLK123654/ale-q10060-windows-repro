@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "result": "PASS",
+  "business_goal": "用Playwright完成广告素材提交页的发布前验收",
+  "substantive_actions": 8,
+  "input_files": [
+    "app/creator_studio.html",
+    "app/creator_studio.js",
+    "app/styles.css",
+    "data/review_scenarios.csv",
+    "rules/review_policy.json",
+    "state/storage_state_matrix.csv",
+    "state/creator_verified.json",
+    "state/creator_limited.json",
+    "state/reviewer_readonly.json"
+  ],
+  "consumer_outputs": {
+    "output/reports/release_review.csv": "发布负责人判断页面是否放行",
+    "output/receipts": "发布负责人核对页面生成的业务回执",
+    "output/screenshots": "前端工程师定位页面问题",
+    "output/tests/creator_review.spec.mjs": "质量团队维护后续回归",
+    "output/playwright.config.mjs": "质量团队维护浏览器运行配置"
+  },
+  "candidate_facing_validation_files": [],
+  "reference_derivable_from_input": true,
+  "prompt_rubric_attachment_closed": true,
+  "windows_native_entry": "npm run test:e2e"
+}
+

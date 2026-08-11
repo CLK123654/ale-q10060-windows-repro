@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "skill": "humanizer-zh",
+  "result": "PASS",
+  "score": 47,
+  "threshold": 45,
+  "dimensions": {
+    "directness": 10,
+    "sentence_rhythm": 9,
+    "trustworthiness": 10,
+    "human_authenticity": 9,
+    "conciseness": 9
+  },
+  "checks": {
+    "grandiose_claims": false,
+    "promotional_language": false,
+    "vague_attribution": false,
+    "mechanical_three_part_structure": false,
+    "negative_parallelism": false,
+    "excessive_connectors": false,
+    "excessive_quotes": false,
+    "mixed_boundary_spaces": false,
+    "unsupported_facts": false,
+    "online_ai_detection_used_as_conclusion": false
+  },
+  "review_note": "正文直接说明发布角色、页面输入、浏览器动作和交付消费者。规则来自输入文件，状态与回执行数均可从页面实跑观察，没有宣传式背景、模糊归因或判卷自证。"
+}
+

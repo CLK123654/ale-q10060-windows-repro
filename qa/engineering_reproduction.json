@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "table_profile": "ale218",
+  "result": "PASS",
+  "task_id": "10060",
+  "task_slug": "playwright_creator_ad_release_review",
+  "artifacts": {
+    "输入数据包.zip": {
+      "sha256": "34c55c0a39113bb8f7c413e2714d324741fecbe1adb447a00699abfb72d16342"
+    },
+    "reference.zip": {
+      "sha256": "2e267d80e31c496ce38b35d25169e272c46bc8eab049646e7f18a1fc7d5d2856"
+    },
+    "关键标准答案.xlsx": {
+      "sha256": "0f2adcb315f2f0083202ec1d47884861b22b1dc9bf6fc048a7747a800b7111d5"
+    },
+    "任务规格转化.xlsx": {
+      "sha256": "9bae0de6772a8c242b580fb93cf826fb7fdb552672d85ef040d2de67d45c3b4c"
+    }
+  },
+  "primary_software": {
+    "name": "Playwright",
+    "version": "Version 1.62.1",
+    "executed": true
+  },
+  "clean_room_runs": [
+    {
+      "root_id": "广告 验收甲",
+      "command": "npm run test:e2e",
+      "timeout_seconds": 180,
+      "return_code": 0,
+      "output_started_empty": true,
+      "primary_software_executed": true,
+      "input_unchanged": true,
+      "reference_match": true,
+      "process_runs": 2,
+      "generated_paths": [
+        "output/playwright.config.mjs",
+        "output/tests/creator_review.spec.mjs",
+        "output/reports/release_review.csv",
+        "output/receipts/C01_VERIFIED_DISCLOSED_READY_submission_receipt.csv",
+        "output/receipts/C02_PAID_POST_NO_DISCLOSURE_submission_receipt.csv",
+        "output/receipts/C03_LIMITED_ACCOUNT_BLOCKED_submission_receipt.csv",
+        "output/receipts/C04_SCHEDULE_LEAD_TOO_SHORT_submission_receipt.csv",
+        "output/receipts/C05_CAROUSEL_ALT_REQUIRED_submission_receipt.csv",
+        "output/receipts/C06_REVIEWER_READONLY_HANDOFF_submission_receipt.csv",
+        "output/screenshots/C01_VERIFIED_DISCLOSED_READY.png",
+        "output/screenshots/C02_PAID_POST_NO_DISCLOSURE.png",
+        "output/screenshots/C03_LIMITED_ACCOUNT_BLOCKED.png",
+        "output/screenshots/C04_SCHEDULE_LEAD_TOO_SHORT.png",
+        "output/screenshots/C05_CAROUSEL_ALT_REQUIRED.png",
+        "output/screenshots/C06_REVIEWER_READONLY_HANDOFF.png"
+      ]
+    },
+    {
+      "root_id": "广告 验收乙",
+      "command": "npm run test:e2e",
+      "timeout_seconds": 180,
+      "return_code": 0,
+      "output_started_empty": true,
+      "primary_software_executed": true,
+      "input_unchanged": true,
+      "reference_match": true,
+      "process_runs": 2,
+      "generated_paths": [
+        "output/playwright.config.mjs",
+        "output/tests/creator_review.spec.mjs",
+        "output/reports/release_review.csv",
+        "output/receipts/C01_VERIFIED_DISCLOSED_READY_submission_receipt.csv",
+        "output/receipts/C02_PAID_POST_NO_DISCLOSURE_submission_receipt.csv",
+        "output/receipts/C03_LIMITED_ACCOUNT_BLOCKED_submission_receipt.csv",
+        "output/receipts/C04_SCHEDULE_LEAD_TOO_SHORT_submission_receipt.csv",
+        "output/receipts/C05_CAROUSEL_ALT_REQUIRED_submission_receipt.csv",
+        "output/receipts/C06_REVIEWER_READONLY_HANDOFF_submission_receipt.csv",
+        "output/screenshots/C01_VERIFIED_DISCLOSED_READY.png",
+        "output/screenshots/C02_PAID_POST_NO_DISCLOSURE.png",
+        "output/screenshots/C03_LIMITED_ACCOUNT_BLOCKED.png",
+        "output/screenshots/C04_SCHEDULE_LEAD_TOO_SHORT.png",
+        "output/screenshots/C05_CAROUSEL_ALT_REQUIRED.png",
+        "output/screenshots/C06_REVIEWER_READONLY_HANDOFF.png"
+      ]
+    }
+  ],
+  "positive_mutations": [
+    {
+      "name": "C04排期从13时改为16时并更新期望",
+      "input_changed": true,
+      "behavior_changed": true,
+      "assertions_passed": true,
+      "observed_change": "C04由schedule_too_soon变为ready_to_submit"
+    }
+  ],
+  "negative_cases": [
+    {
+      "name": "creator_limited登录状态文件缺失",
+      "return_code": 1,
+      "failed_closed": true,
+      "no_stale_deliverables": true
+    }
+  ],
+  "line_ending_reproduction": {
+    "lf_final_input_passed": true,
+    "crlf_variant_passed": true,
+    "crlf_reference_match": true
+  },
+  "forbidden_shortcuts": {
+    "no_precomputed_outputs": true,
+    "no_case_id_hardcoding": true,
+    "no_static_only_substitute": true,
+    "no_authoring_directory_dependency": true
+  },
+  "windows_native_reproduction": {
+    "required": true,
+    "windows_command": "npm run test:e2e",
+    "original_data_paths": [
+      "input_data/app/creator_studio.html",
+      "input_data/data/review_scenarios.csv",
+      "input_data/rules/review_policy.json",
+      "input_data/state/storage_state_matrix.csv"
+    ],
+    "windows_software_operations": [
+      "Playwright为每个case创建独立Chromium上下文",
+      "Playwright通过可访问定位器操作页面",
+      "Playwright捕获download事件并保存回执",
+      "Playwright读取可访问树并保存完整页面截图"
+    ],
+    "linux_executables": [],
+    "linux_executables_executed": false,
+    "reproduced_after_linux_executables_removed": true,
+    "reference_match_after_removal": true,
+    "no_wsl_required": true,
+    "no_linux_container_required": true,
+    "no_posix_shell_required": true,
+    "no_unix_only_api_required": true,
+    "cross_platform_paths": true,
+    "actual_windows_run": false
+  }
+}
