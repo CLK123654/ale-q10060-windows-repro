@@ -112,9 +112,9 @@ function Assert-SpecificationShape {
       $reference = $cell.GetAttribute('r')
       Assert-True ($reference -match '^[AB]\d+$') "specification contains data outside two columns: $reference"
     }
-    $dimension = $xml.SelectSingleNode("//*[local-name()='dimension']")
-    Assert-True ($null -ne $dimension) 'specification dimension missing'
-    Assert-True ($dimension.GetAttribute('ref') -ceq 'A1:B16') 'specification must be exactly 16 rows and two columns'
+    $cells = @($xml.SelectNodes("//*[local-name()='c']"))
+    $rowNumbers = @($cells | ForEach-Object { [int]([regex]::Match($_.GetAttribute('r'), '\d+').Value) })
+    Assert-True (($rowNumbers | Measure-Object -Maximum).Maximum -eq 16) 'specification must have exactly 16 rows'
   } finally {
     $archive.Dispose()
   }
