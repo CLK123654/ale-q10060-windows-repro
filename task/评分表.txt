@@ -1,4 +1,7 @@
+总分100分
+
 检查项：可执行测试与交付结构
+分值：18分
 标准答案：Playwright配置和测试源码位于题面指定路径，可由锁文件版本的Playwright执行；发布复核表可解析，表内回执和截图路径都能定位到实际文件。
 关键字段：playwright.config.mjs、creator_review.spec.mjs、release_review.csv的case_id、receipt_file和screenshot_file。
 容差：函数拆分、变量名、源码注释和测试标题可以不同；交付相对路径固定。
@@ -10,6 +13,7 @@
 所属层级：L1任务指令遵循层
 
 检查项：登录状态隔离
+分值：16分
 标准答案：每个case通过browser.newContext加载场景指定的storageState，页面身份提示与storage_state_matrix.csv中同一state_file的记录一致。
 关键字段：review_scenarios.csv的case_id与storage_state，storage_state_matrix.csv的state_file、actor_role、account_status和expected_banner。
 容差：case执行顺序不计分，按case_id和state_file连接比较。
@@ -21,6 +25,7 @@
 所属层级：L8运行验证或可执行行为层
 
 检查项：页面业务状态
+分值：22分
 标准答案：测试按场景填写页面表单并触发素材核验，发布复核表中的review_state、submit_enabled和status_text与同一case_id的场景期望及页面观察值一致。
 关键字段：case_id、expected_state、submit_enabled、status_text和页面review-state。
 容差：复核表行序不计分，布尔值只接受true或false。
@@ -32,6 +37,7 @@
 所属层级：L6领域计算与专业规则层
 
 检查项：下载回执
+分值：18分
 标准答案：每个case都通过download事件保存页面给出的suggestedFilename。回执列顺序与review_policy.json一致，数据行数与场景receipt_data_rows一致，首行review_state与发布复核表一致。
 关键字段：case_id、receipt_file、receipt_rows、downloadable_columns和review_state。
 容差：CSV换行可为LF或CRLF，记录内容不设容差。
@@ -43,6 +49,7 @@
 所属层级：L9跨产物一致性与可追溯层
 
 检查项：可访问名称与截图
+分值：12分
 标准答案：测试使用role、label或test id定位素材核验表单、核验结果、status消息和页面按钮，并为每个case保存对应的完整页面PNG。
 关键字段：status_role、form_name、result_region、named_buttons和screenshot_file。
 容差：PNG字节和页面渲染细节可随系统字体变化，页面内容和尺寸必须有效。
@@ -54,6 +61,7 @@
 所属层级：L11感知与空间质量
 
 检查项：本地浏览器访问
+分值：14分
 标准答案：Playwright通过webServer启动本地页面，业务访问的主机均为127.0.0.1，测试过程不连接真实账号、广告平台或外部接口。
 关键字段：webServer、baseURL、页面request的hostname和Playwright退出码。
 容差：本地端口可按配置调整，主机必须保持127.0.0.1。

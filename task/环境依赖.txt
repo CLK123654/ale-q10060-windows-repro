@@ -1,5 +1,5 @@
 支持Windows11、macOS13及主流64位Linux。主软件为Playwright1.62.1，浏览器为锁文件对应的Chromium，Node.js24负责运行测试入口。Windows11可直接使用PowerShell执行npm命令；WSL、Linux容器、Bash和POSIX专用接口都不在运行链中。Playwright必须真实创建浏览器上下文、操作页面并捕获下载事件，静态读取HTML不能代替浏览器验收。
 
-辅助工具为npm、PowerShell和CSV查看器。首次执行npm ci及安装Chromium需要联网，正式验收只访问127.0.0.1上的本地页面，不连接真实账号、广告平台或外部接口。输入中的身份和业务案例均为虚构数据。Node.js与Playwright采用开源许可，不需要商业软件许可证。
+辅助工具为npm、PowerShell和CSV查看器。首次执行npm ci及安装Chromium需要联网，正式验收只访问127.0.0.1上的本地页面，不连接真实账号、广告平台或外部接口。输入中的身份和业务案例均为虚构数据。
 
 建议准备2核CPU、4GB内存和2GB可写磁盘，无需GPU或管理员权限。执行账号需要读取input_data并写入output，单次运行超时可设为3分钟。本题风险集中在跨case复用登录上下文、下载监听顺序错误，以及把当前系统时间用于排期判断。
