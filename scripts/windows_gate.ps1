@@ -112,6 +112,9 @@ function Assert-SpecificationShape {
       $reference = $cell.GetAttribute('r')
       Assert-True ($reference -match '^[AB]\d+$') "specification contains data outside two columns: $reference"
     }
+    $dimension = $xml.SelectSingleNode("//*[local-name()='dimension']")
+    Assert-True ($null -ne $dimension) 'specification dimension missing'
+    Assert-True ($dimension.GetAttribute('ref') -ceq 'A1:B16') 'specification must be exactly 16 rows and two columns'
   } finally {
     $archive.Dispose()
   }
@@ -127,7 +130,7 @@ function Assert-NaturalText {
   $han = '[\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff]'
   $boundary = "(?:$han$space[A-Za-z0-9]|[A-Za-z0-9]$space$han|[A-Za-z]$space[0-9]|[0-9]$space[A-Za-z])"
   $riskTerms = @('此外', '至关重要', '深入探讨', '彰显', '赋能', '无缝', '不断演变的格局', '不仅', '不只是', '值得注意的是', '专家认为', '行业报告显示', '观察者指出', '未来展望', '挑战与未来', '——')
-  $processTerms = @('制题返修', '去AI', '修改题目', '规则调整', 'Windows复现', 'GitHub Actions', '双干净目录', '动态变化', '负例', '附件哈希', '飞书回读')
+  $processTerms = @('制题', '返修', '去AI', '修改题目', '规则调整', 'Windows复现', 'Windows验证', 'GitHub Actions', 'CI门禁', '双空目录', '双干净目录', '动态改参', '动态变化', '负例', '附件哈希', '飞书回读', 'Reference', 'reference.zip', 'reference_members', 'validation', '自证', '控制量', '不变量', '连续运行', '重复运行', '重复执行', '失败清理', '失败关闭', '失败收口')
   foreach ($text in $Texts) {
     foreach ($character in $quoteCharacters) {
       Assert-True (-not $text.Contains([string]$character)) "$Label contains a forbidden quote"
@@ -176,6 +179,8 @@ Assert-SpecificationShape (Join-Path $ArtifactsRoot '任务规格转化.xlsx')
 
 $taskTexts = @(Get-ChildItem -LiteralPath (Join-Path $RepositoryRoot 'task') -File -Filter '*.txt' | ForEach-Object { Get-Content -LiteralPath $_.FullName -Raw })
 Assert-NaturalText $taskTexts 'task text'
+$scoreText = Get-Content -LiteralPath (Join-Path $RepositoryRoot 'task/评分表.txt') -Raw
+Assert-True (-not [regex]::IsMatch($scoreText, '\bC0[1-6](?:_[A-Z0-9_]+)?\b|\b(?:ready_to_submit|needs_disclosure|account_limited|schedule_too_soon|needs_alt_text|reviewer_readonly)\b|分别为|依次为|其余\d+|\d+份回执|\d+张截图')) 'sample answers leaked in scoring criteria'
 Assert-NoPublicMetadata
 
 $nodeScript = Join-Path $RepositoryRoot 'scripts/windows_reproduce.mjs'
@@ -198,6 +203,7 @@ Assert-True ($nodeExit -eq 0) "Windows reproduction failed with exit code $nodeE
   answer_sheets = @($Manifest.answer_sheets)
   specification_sheets = @($Manifest.specification_sheets)
   specification_columns = 2
+  specification_rows = 16
 } | ConvertTo-Json -Depth 30 | Set-Content -LiteralPath (Join-Path $EvidenceRoot 'windows-audit.json') -Encoding utf8NoBOM
 
 Write-Host 'Windows Playwright gate: PASS'

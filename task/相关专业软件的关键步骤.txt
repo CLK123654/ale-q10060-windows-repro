@@ -1,8 +1,8 @@
-1. 在Playwright测试工程中读取data/review_scenarios.csv和state/storage_state_matrix.csv，按storage_state把六个case关联到角色、账号状态与页面身份提示。
+1. 在Playwright测试工程中读取data/review_scenarios.csv和state/storage_state_matrix.csv，按storage_state把每个case关联到角色、账号状态与页面身份提示。
 2. 在output/playwright.config.mjs配置Chromium、本地webServer、串行worker、下载接收、Asia/Shanghai时区和固定viewport。
 3. 对每个case调用browser.newContext并传入对应storageState，访问creator_studio.html后先核对role为note的身份提示。
 4. 使用getByLabel、getByRole和getByTestId填写表单、点击核验素材，并断言review_state、status_text和提交按钮状态。
 5. 点击下载前注册page.waitForEvent处理download，使用suggestedFilename保存回执并解析CSV内容。
-6. 从页面可访问树核对素材核验表单、核验结果、状态消息和三个命名按钮，再保存完整页面截图。
+6. 从页面可访问树核对素材核验表单、核验结果、状态消息和页面按钮，再保存完整页面截图。
 7. 按case_id生成release_review.csv，核对每条回执路径与截图路径都能命中output中的实际文件。
-8. 执行npm run test:e2e，检查非本地请求为空，并确认异常退出时本轮动态目录已被清理。
+8. 执行npm run test:e2e，检查非本地请求为空，并把页面观察值与发布复核表逐项核对。

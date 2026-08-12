@@ -13,54 +13,54 @@
     {
       "qid": "empty",
       "title_score": 0.3704,
-      "body_score": 0.0454
+      "body_score": 0.0483
     },
     {
       "qid": "10399",
       "title_score": 0.3636,
-      "body_score": 0.0431
+      "body_score": 0.046
     },
     {
       "qid": "13747",
       "title_score": 0.36,
-      "body_score": 0.027
+      "body_score": 0.0296
     },
     {
       "qid": "10043",
       "title_score": 0.3571,
-      "body_score": 0.0651
+      "body_score": 0.0682
     },
     {
       "qid": "10422",
       "title_score": 0.3571,
-      "body_score": 0.0463
+      "body_score": 0.0474
     }
   ],
   "same_software_top_five": [
     {
       "qid": "empty",
       "title_score": 0.3704,
-      "body_score": 0.0454
+      "body_score": 0.0483
     },
     {
       "qid": "10399",
       "title_score": 0.3636,
-      "body_score": 0.0431
+      "body_score": 0.046
     },
     {
       "qid": "13747",
       "title_score": 0.36,
-      "body_score": 0.027
+      "body_score": 0.0296
     },
     {
       "qid": "10043",
       "title_score": 0.3571,
-      "body_score": 0.0651
+      "body_score": 0.0682
     },
     {
       "qid": "10422",
       "title_score": 0.3571,
-      "body_score": 0.0463
+      "body_score": 0.0474
     }
   ],
   "threshold_hits": [],
