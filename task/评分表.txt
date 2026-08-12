@@ -65,7 +65,7 @@
 标准答案：Playwright通过webServer启动本地页面，业务访问的主机均为127.0.0.1，测试过程不连接真实账号、广告平台或外部接口。
 关键字段：webServer、baseURL、页面request的hostname和Playwright退出码。
 容差：本地端口可按配置调整，主机必须保持127.0.0.1。
-失败边界：访问外部页面或接口、静态读取HTML代替浏览器操作，或在Windows运行时依赖WSL、Linux容器或POSIX脚本。
+失败边界：访问外部页面或接口，或静态读取HTML代替浏览器操作。
 可观察证据：Playwright配置、页面请求记录、Chromium进程和测试日志。
 客观硬性标准：Chromium真实运行，外部请求集合为空，测试返回0。
 阈值：三项全部成立。
