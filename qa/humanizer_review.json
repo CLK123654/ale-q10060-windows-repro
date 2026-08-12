@@ -26,7 +26,7 @@
   "minimum_total": 45,
   "notes": [
     "题面从广告素材页上线前的实际验收切入，发布负责人、前端工程师和质量团队都有明确用途。",
-    "状态、排期、替代文本和回执行数均由输入场景及页面规则提供，没有虚构外部来源。",
+    "状态、排期、替代文本和回执行数均由输入场景及页面规则提供，没有无来源的外部信息。",
     "评分表只写输入规则、业务主键、字段、容差和复算关系，精确样本答案留在五页标答。",
     "候选人可见内容已删除自动判卷、工程故障演练和制题过程口吻。"
   ],
@@ -36,14 +36,14 @@
     "任务概要.txt": "893ad4b161ae676bd3b1726145c3495eb00c301dcb45fa5b8fcf746182ad9691",
     "任务prompt.txt": "696c2856da762e4a60e0e0ac670428ae11932455ec38646feceb5fff1dc4e723",
     "关键动作.txt": "dd15c58792a61498c64885500e812d11e58ca596cadf13010103cecf721280b6",
-    "评分表.txt": "c87ee87fdd1a566de9e655e6254cdaf9e93225e0f7ecdbda157c74fadeafcae8",
-    "环境依赖.txt": "dd0ebc5c14716dc66897902f0de57a65ae3bca37d0e692a38d4b74cb5180069f",
+    "评分表.txt": "fdc2e1d20eaceef4b4e610e0a06e62e5c92e8ca6f7de7f982e46503f93297408",
+    "环境依赖.txt": "f45764dc2e47f93eceb4f4d82229a69e2837049221eaa99a92b52fa96d1eb472",
     "相关专业软件的关键步骤.txt": "36597261d0e83cb5ed7a6bd890d90e62425bfb07fa3aad9c107f343a03090cb1",
-    "task_fields.json": "0409d8528bfdf0cd053fab904942d2592ca25dcf73e6d8af2e8dc6bbd7d6aa6b",
-    "ALE-专家数据作业表.csv": "99478ea67424bf34db0193ef09b49928e0d247c1cd5ac7036079445e88ee238e",
+    "task_fields.json": "ed36cb44c8b968ef02b9ef6413e2e22bb0555a1e65bf43c73527e1612d6cd34a",
+    "ALE-专家数据作业表.csv": "313c58d32ff2f29b6396682db2a4858dd27a01d1ae0736432f8aacdf37d01763",
     "输入数据包.zip": "ef10dea9cc44a92885843b9935dd6243754a2af160b9b58a41bddf1b5fa4d267",
     "reference.zip": "2e267d80e31c496ce38b35d25169e272c46bc8eab049646e7f18a1fc7d5d2856",
     "关键标准答案.xlsx": "25070853ca17fe1dee1e95c40d3780d367ecd142b353b58b19bb647db45c3759",
-    "任务规格转化.xlsx": "fdaf839473fadb2b65b71706789dd5c1a291da09fc2cdfc217a18108b9b2a3cb"
+    "任务规格转化.xlsx": "f281764b6f22f63f567372c1c3c2158e0b1275b07f155946022f36863c7454b9"
   }
 }

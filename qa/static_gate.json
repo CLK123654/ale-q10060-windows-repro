@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "result": "PASS",
-  "scanned_sources": 333,
+  "scanned_sources": 336,
   "violations": [],
   "score_answer_leakage_matches": [],
   "answer_sheets": [

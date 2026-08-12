@@ -1,0 +1,110 @@
+{
+  "result": "PASS",
+  "task_key": "id:10060",
+  "change_type": "business_data_label_text_only",
+  "windows_rerun_required": false,
+  "business_semantics_changed": false,
+  "unchanged": [
+    "data",
+    "rules",
+    "code",
+    "attachment_member_structure",
+    "answers",
+    "score_semantics"
+  ],
+  "exclusions": [
+    {
+      "scope": "node_modules and package metadata",
+      "reason": "第三方依赖中的test、mock data和license字段属于依赖源码或包元数据，不是对本题业务输入的定性，也不是候选自然语言。"
+    }
+  ],
+  "replacements": [
+    {
+      "file": "ALE-专家数据作业表.csv#环境依赖",
+      "changes": [
+        [
+          "输入中的身份和业务案例均为虚构数据。Node.js与Playwright采用开源许可，不需要商业软件许可证。",
+          "创作者身份、账号状态和业务案例字段已脱敏。"
+        ]
+      ]
+    },
+    {
+      "file": "任务规格转化.xlsx#任务规格转化",
+      "before_sha256": "fdaf839473fadb2b65b71706789dd5c1a291da09fc2cdfc217a18108b9b2a3cb",
+      "after_sha256": "f281764b6f22f63f567372c1c3c2158e0b1275b07f155946022f36863c7454b9",
+      "changes": [
+        [
+          "输入来源：虚构并脱敏的创作者后台页面、验收案例、发布规则、登录状态矩阵和storageState文件",
+          "输入来源：字段已脱敏的创作者后台页面、验收案例、发布规则、登录状态矩阵和storageState文件"
+        ],
+        [
+          "不适合作为评分点的内容：函数拆分、变量命名、测试标题、源码注释、CSV普通行序、LF或CRLF差异、截图像素级差异以及不改变规定业务结果的附加日志",
+          "实现边界：输入页面、案例、发布规则和登录状态保持只读，不连接真实账号、广告平台或外部接口，测试代码、复核表、回执和截图只写入output目录"
+        ]
+      ]
+    },
+    {
+      "file": ".qa/humanizer-review.json",
+      "changes": [
+        [
+          "没有虚构外部来源",
+          "没有无来源的外部信息"
+        ]
+      ]
+    }
+  ],
+  "current_attachment_sha256": {
+    "输入数据包.zip": "ef10dea9cc44a92885843b9935dd6243754a2af160b9b58a41bddf1b5fa4d267",
+    "reference.zip": "2e267d80e31c496ce38b35d25169e272c46bc8eab049646e7f18a1fc7d5d2856",
+    "关键标准答案.xlsx": "25070853ca17fe1dee1e95c40d3780d367ecd142b353b58b19bb647db45c3759",
+    "任务规格转化.xlsx": "f281764b6f22f63f567372c1c3c2158e0b1275b07f155946022f36863c7454b9"
+  },
+  "scans": {
+    "scope": [
+      "17_fields",
+      "input_zip_all_members",
+      "reference_zip_all_members",
+      "answer_workbook_all_cells",
+      "spec_workbook_all_cells",
+      "public_repo_candidate_text"
+    ],
+    "mixed_boundary_space_natural_language": 0,
+    "quote_natural_language": 0,
+    "controlled_enum_exemption": "Computing, Data & Mathematical Sciences 计算、数据与数学科学",
+    "business_data_label_hits": 0,
+    "process_language_hits": 0,
+    "static_gate": ".qa/static_gate.json"
+  },
+  "specification_semantic_audit": {
+    "two_column_structure": true,
+    "task_id": "playwright_creator_ad_release_review",
+    "task_id_is_name_based_lower_snake_case": true,
+    "input_source_is_current_batch": true,
+    "business_goal_is_realistic": true,
+    "deliverables_are_closed": true,
+    "software_steps_are_operational": true,
+    "implementation_boundary_is_business_facing": true,
+    "table_field_collage_hits": 0,
+    "authoring_or_validation_voice_hits": 0,
+    "ai_template_hits": 0
+  },
+  "humanizer_zh": {
+    "total": 47,
+    "threshold": 45,
+    "online_ai_detection_used_as_conclusion": false,
+    "file": ".qa/humanizer-review.json"
+  },
+  "workbook_visual_review": {
+    "result": "PASS",
+    "preview": "qa/workbooks/任务规格转化.png",
+    "clipped_cells": 0,
+    "formula_errors": 0
+  },
+  "reused_windows_evidence": {
+    "run_id": 31588320206,
+    "run_file": "../../evidence/10060/run.json",
+    "reproduction_file": "../../evidence/10060/windows-reproduction.json",
+    "audit_file": "../../evidence/10060/windows-audit.json",
+    "reason": "本次只改数据来源标签、旧环境文字、人工作者说明和任务规格描述，没有改变业务数据、规则、代码、成员结构、答案或评分语义。"
+  }
+}
